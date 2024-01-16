@@ -1,6 +1,6 @@
 defmodule Ash.Flow.Argument do
   @moduledoc "An argument to a flow"
-  defstruct [:name, :type, :default, :allow_nil?, :constraints]
+  defstruct [:name, :type, :default, :allow_nil?, :constraints, :description]
 
   @schema [
     name: [
@@ -28,6 +28,11 @@ defmodule Ash.Flow.Argument do
       default: [],
       doc:
         "Constraints to provide to the type when casting the value. See the type's documentation for more information."
+    ],
+    description: [
+      type: :string,
+      default: "",
+      doc: "Attribute description. This is used to generate documentation for the argument."
     ]
   ]
 
